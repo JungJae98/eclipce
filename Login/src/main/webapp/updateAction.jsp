@@ -12,9 +12,6 @@
 		String passwd = request.getParameter("passwd"); 
 		int idx = Integer.parseInt(request.getParameter("user_idx")); 
 		
-
-		
-		
 		pstmt.setString(1, userid);
 		pstmt.setString(2, passwd);
 		pstmt.setInt(3, idx);

@@ -17,6 +17,7 @@
 </form>
 <form action="updateForm.jsp" method="post">
 	<button>정보수정</button>
+	
 </form>
 </body>
 </html>
