@@ -31,8 +31,10 @@
 </head>
 <body>
 	<%
-	request.setCharacterEncoding("UTF-8");
+	response.setCharacterEncoding("UTF-8");
 	response.setContentType("text/html; charset=UTF-8");
+	request.setCharacterEncoding("UTF-8"); 
+	
 	if(rs.next()){ 
 		int idx = rs.getInt("idx");
 		String title = rs.getString("title");
@@ -42,7 +44,7 @@
 		int useridx = rs.getInt("useridx");
 		int amen = rs.getInt("amen");
 	%>
-	<form action="updateViewAction.jsp" method="get" accept-charset="utf-8">
+	<form action="updateViewAction.jsp" method="post" accept-charset="utf-8">
 		제목: <input type="text" name="title" value="<%= title %>"> <br>
 		내용: <textarea rows="30" cols="70" name="detail"> <%= detail%></textarea>
 		<input type="hidden" value="<%= idx %>" name="idx">
