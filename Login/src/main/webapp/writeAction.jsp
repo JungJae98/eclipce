@@ -3,7 +3,7 @@
 <%@ include file="Connection.jsp" %>
 <%
 try{
-	String sql = "INSERT INTO test (title, detail, time, userid, useridx) VALUES(?,?,NOW(),?,?)";
+	String sql = "INSERT INTO testbd (title, detail, time, userid, useridx, amen) VALUES(?,?,NOW(),?,?, 0)";
 	
 	pstmt = conn.prepareStatement(sql);
 	
@@ -14,25 +14,19 @@ try{
 	
 	pstmt.setString(1, title);
 	pstmt.setString(2, detail);
-	pstmt.setInt(3, idx);
-	pstmt.setString(4, userid);
+	pstmt.setInt(4, idx);
+	pstmt.setString(3, userid);
 
 	pstmt.executeUpdate();
-	response.sendRedirect("loginForm.jsp");
+	response.sendRedirect("boarder.jsp");
 	
 	
-	%>
-	<script>
-		alert("회원정보 삭제완료");
-	</script>
-	<%
-	response.sendRedirect("loginForm.jsp");
 
 	
 	
 }catch(Exception e){
 	e.printStackTrace();
-	response.sendRedirect("loginForm.jsp");
+	response.sendRedirect("boarder.jsp");
 }finally{
 	if(pstmt != null) try{pstmt.close();} catch(SQLException ex){}
 	if(conn != null) try{conn.close();} catch(SQLException ex) {}

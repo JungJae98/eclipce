@@ -14,7 +14,7 @@
 	String PWD = "test";
 	String DB_NAME = "test_db";
 	
-	String DB_URL = "jdbc:mariadb://" + IP + ":" + PORT + "/" +  DB_NAME;
+	String DB_URL = "jdbc:mariadb://" + IP + ":" + PORT + "/" +  DB_NAME +"?useUnicode=true&characterEncoding=UTF-8";
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
