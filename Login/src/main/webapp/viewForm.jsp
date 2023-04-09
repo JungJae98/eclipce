@@ -79,5 +79,20 @@
 	<%
 		} 
 	%>
+	<!-- 댓글 작성 div start -->
+	<div>
+		<form action="">
+			<table style="text-align: center; border: 1px solid #dddddd">
+				<tr>
+					<td style="border-bottom:none;" valign="middle"><br><br><%= session.getAttribute("user_id") %></td>
+					<td><input type="text" style="height:100px;"  placeholder="상대방을 존중하는 댓글을 남깁시다."></td>
+					<td><br><br><input type="submit" value="댓글 작성"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<!-- 댓글 작성 div end -->
+	<!-- 댓글 출력은 일단 레벨1 idx하나를 가져오고 그리고 그 하위 레벨의 값을 불러온다. if문을 겹으로 사용해야하나? -->
+	
 </body>
 </html>
